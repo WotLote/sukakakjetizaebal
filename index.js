@@ -69,13 +69,15 @@ connect.query("SET SESSION wait_timeout = 604800");
 
 io.on('connection', (socket) => {
 	io.emit('gg', ('gisnktqjmkn'))
-
 	var handshakeData = socket.request;
-  console.log("middleware:", handshakeData._query['foo']);
+	console.log("middleware:", handshakeData._query['foo']);
 	var socketRoom = handshakeData._query['foo'];
 	socket.join(socketRoom)
 
+	console.log('connected')
 	socket.on('auth', function(data){
+	console.log('auth')
+		
 	console.log(socket.rooms)
 		connect.query('SELECT * FROM account WHERE Login LIKE "'+ data.login +'"', function(error, result, field){
 			if (error) {
