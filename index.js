@@ -9,7 +9,7 @@ const socketIO = require('socket.io');
 
 const server = express()
 	.use(express.static(path.join(__dirname, 'public')))
-	.get('*', (req, res) => res.sendFile(index))
+	.get('/', (req, res) => res.sendFile(index))
 	.use(bodyParser.json())
 	.use(function(req, res, next) {
 		res.header("Access-Control-Allow-Origin", "*");
@@ -77,7 +77,7 @@ io.on('connection', (socket) => {
 	console.log('connected')
 	socket.on('auth', function(data){
 	console.log('auth')
-		
+
 	console.log(socket.rooms)
 		connect.query('SELECT * FROM account WHERE Login LIKE "'+ data.login +'"', function(error, result, field){
 			if (error) {
