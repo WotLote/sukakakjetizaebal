@@ -16,7 +16,7 @@ const server = express()
 		res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-type, Accept,application/json");
 		next();
 	})*/
-	.use(bodyParser.json())
+	/*.use(bodyParser.json())*/
 /*	.post('/auth', function(req, res){
 		const data = req.body;
 		connect.query('SELECT * FROM account WHERE Login LIKE "'+ data.login +'"', function(error, result, field){
