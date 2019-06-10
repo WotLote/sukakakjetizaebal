@@ -6,9 +6,11 @@ const mysql = require('mysql');
 const jwt = require('jsonwebtoken');
 const socketIO = require('socket.io');
 
+const INDEX = path.join(__dirname, 'public/index.html');
 
 const server = express()
 	.use(express.static(path.join(__dirname, 'public')))
+	.get('*', (req, res) => res.sendFile(INDEX))
 	.use(bodyParser.json())
 	.use(function(req, res, next) {
 		res.header("Access-Control-Allow-Origin", "*");
