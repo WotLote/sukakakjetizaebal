@@ -9,7 +9,6 @@ const socketIO = require('socket.io');
 
 const server = express()
 	.use(express.static(path.join(__dirname, 'public')))
-	.get('/', (req, res) => res.sendFile(index))
 	.use(bodyParser.json())
 	.use(function(req, res, next) {
 		res.header("Access-Control-Allow-Origin", "*");
