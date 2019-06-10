@@ -68,6 +68,8 @@ connect.query("SET SESSION wait_timeout = 604800");
 
 
 io.on('connection', (socket) => {
+	io.emit('gg', ('gisnktqjmkn'))
+
 	var handshakeData = socket.request;
   console.log("middleware:", handshakeData._query['foo']);
 	var socketRoom = handshakeData._query['foo'];
