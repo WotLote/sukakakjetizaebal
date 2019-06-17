@@ -40,10 +40,10 @@ const io = socketIO(server);
 const secret = 'ggwp'
 
 const connect = mysql.createConnection({
-	host: 'sql7.freemysqlhosting.net',
-	user: 'sql7294860',
-	password: '61Gyjn7u5x',
-	database: 'sql7294860'
+	host: 'sql2.freemysqlhosting.net',
+	user: 'sql2295766',
+	password: 'kI8*aQ5!',
+	database: 'sql2295766'
 });
 
 getDateNow = () => {
